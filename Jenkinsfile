@@ -1,6 +1,10 @@
 pipeline{
 
     agent any
+     tools {
+          maven 'maven'
+
+        }
 
     stages {
 
@@ -14,5 +18,16 @@ pipeline{
                 }
             }
        }
+
+       stage('UNIT testing'){
+
+                   steps{
+
+                       script{
+
+                           sh 'mvn test'
+                       }
+                   }
+              }
    }
 }
