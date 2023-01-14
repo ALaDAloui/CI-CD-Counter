@@ -77,6 +77,8 @@ pipeline{
 
                                 steps{
 
+                                     script {
+
                                      nexusArtifactUploader artifacts:
                                       [[artifactId: 'springboot',
                                        classifier: '',
