@@ -88,7 +88,7 @@ pipeline{
                                         ],
                                          credentialsId: 'nexus-auth',
                                           groupId: 'com.example',
-                                           nexusUrl: 'localhost:8081',
+                                           nexusUrl: '172.22.0.4:8081',
                                             nexusVersion: 'nexus3',
                                              protocol: 'http',
                                              repository: 'counterapp-release',
