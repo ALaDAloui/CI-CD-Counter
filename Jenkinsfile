@@ -78,6 +78,7 @@ pipeline{
                                 steps{
 
                                      script {
+                                     def readPomVersion = readMavenPom file: 'pom.xml'
 
                                      nexusArtifactUploader artifacts:
                                       [[artifactId: 'springboot',
@@ -86,12 +87,12 @@ pipeline{
                                         type: 'jar']
                                         ],
                                          credentialsId: 'nexus-auth',
-                                          groupId: 'com.exemple',
+                                          groupId: 'com.example',
                                            nexusUrl: 'localhost:8081',
                                             nexusVersion: 'nexus3',
                                              protocol: 'http',
                                              repository: 'counterapp-release',
-                                             version: '1.0.0'
+                                             version: "$readPomVersion.version"
                                               }
                                          }
                                  }
