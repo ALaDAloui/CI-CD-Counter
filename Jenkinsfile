@@ -13,5 +13,6 @@ pipeline{
                     git branch: 'main', url: 'https://github.com/ALaDAloui/CI-CD-Counter.git'
                 }
             }
-        }
+       }
+   }
 }
